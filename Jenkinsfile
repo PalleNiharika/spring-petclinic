@@ -8,13 +8,13 @@ pipeline {
     stages {
         stage('vcs') {
             steps {
-                git branch: '${params.BRANCH_TO_BUILD}', url: 'https://github.com/PalleNiharika/spring-petclinic.git'
+                git branch: "${params.BRANCH_TO_BUILD}", url: 'https://github.com/PalleNiharika/spring-petclinic.git'
             }
 
         }
         stage('build') {
             steps {
-                sh 'mvn ${params.MAVEN_GOAL}'
+                sh "mvn ${params.MAVEN_GOAL}"
             }
         }
         stage('archive results') {
