@@ -9,7 +9,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                mvn package
+                sh 'mvn package'
             }
         }
         stage('archive results') {
